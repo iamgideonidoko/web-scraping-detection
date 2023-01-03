@@ -21,7 +21,7 @@ app.get('/visitors/:id', async (req, res) => {
             }
         });
         const visits = fpRes.data?.visits?.slice(0, 30);
-        const consistentBrowserDetails = visits?.slice(0, 20)?.every((visit) => visit?.browserDetails.toString() === visits?.[0]?.browserDetails.toString());
+        const consistentBrowserDetails = visits?.every((visit) => visit?.browserDetails.toString() === visits?.[0]?.browserDetails.toString());
 
         return res.json({
             status: 'success',
